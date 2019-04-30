@@ -1,5 +1,8 @@
+
 <html>
 <header>
+	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<style>
 body {
 	    font: 11px sans-serif;
@@ -30,18 +33,14 @@ body {
       margin: 10px auto;
       padding: 10px 10px 15px;
 	}
-	.emphasis{
-    w-idth:70px;
-    h-eight:64px;
-    background: white ;
-    padding: 4px;
-    marg-in:6px;
-    display: block;
-    cursor: default;
-    -webkit-box-shadow:0 4px 8px #666; 
-    -moz-box-shadow:0 4px 8px #666;
-    box-shadow:0 4px 8px #666;
-
+	.nodeFrame{
+		background: white ;
+		padding: 0px 0px 4px 0px;
+		display: block;
+		cursor: default;
+		-webkit-box-shadow:0 4px 8px #666; 
+		-moz-box-shadow:0 4px 8px #666;
+		box-shadow:0 4px 8px #666;
 	}
 	p {
 		padding:0;
@@ -51,27 +50,28 @@ body {
 		border-style: solid;
 		border-width: 1px;
 	}
- img{
- width:auto;
- height:auto;
- max-width:72px;
- max-height:72px;
+img{
+	width:100%;
+	height:100%;
+	max-width:72px;
+	max-height:72px;
+	margin:4px;
 }
 	</style>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/d3-dtree/dist/dTree.min.js"></script>
+
 </header>
 
 <body>
-  <h1>Demo <a href="https://zurb.com/playground/css3-polaroids">photo effect</h1>
   <div id="graph"></div>
 
 	<script>
 treeData = [{
   "name": "温忠智",
   "class": "man",
-  "textClass": "emphasis",
+  "textClass": "nodeFrame",
   "marriages": [{
     "spouse": {
       "name": "Iliana",
@@ -122,7 +122,7 @@ treeData = [{
 dTree.init(treeData, {
   target: "#graph",
   debug: true,
-  height: 800,
+  height: 600,
   width: 800,
   callbacks: {
     nodeClick: function(name, extra) {
@@ -131,8 +131,7 @@ dTree.init(treeData, {
     textRenderer: function(name, extra, textClass) {
     	if (extra && extra.nickname)
       	name = name + " (" + extra.nickname + ")";
-      textClass = 'emphasis';
-    	return "<div align='center' class='" + textClass + "'><img src='https://zurb.com/playground/uploads/upload/upload/198/image-07.jpg'/><br/>" + name + "</div>";
+    	return "<div align='center' class='nodeFrame'><img src='https://zurb.com/playground/uploads/upload/upload/198/image-07.jpg'/><br/>" + name + "</div>";
     },
     nodeRenderer: function(name, x, y, height, width, extra, id, nodeClass, textClass, textRenderer) {
       let node = '';
@@ -147,6 +146,7 @@ dTree.init(treeData, {
   }
 });
 	</script>
+
 </body>
 
 </html>
