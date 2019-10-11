@@ -1,4 +1,3 @@
-
 <html>
 <header>
 	<meta charset="UTF-8">
@@ -69,56 +68,93 @@ img{
 
 	<script>
 treeData = [{
-  "name": "温忠智",
-  "class": "man",
-  "textClass": "nodeFrame",
-  "marriages": [{
-    "spouse": {
-      "name": "Iliana",
-      "class": "woman",
-      "extra": {
-      	"nickname": "Illi"
-      }
-    },
-    "children": [{
-      "name": "James",
-      "class": "man",
-      "marriages": [{
-        "spouse": {
-          "name": "Alexandra",
-          "class": "woman"
-        },
-        "children": [{
-          "name": "Eric",
-          "class": "man",
-          "marriages": [{
-            "spouse": {
-              "name": "Eva",
-              "class": "woman"
-            }
+  name: "伏羲",
+  class: "man",
+  textClass: "nodeFrame",
+  marriages: [{
+    spouse:{ "name":"女娲", "class":"woman"},
+    children: [
+       { name: "麒麟", "class": "man" },
+       { name: "凤凰", "class": "woman" },
+       { name: "少典",
+           class: "man",
+           extra: { "nickname": "有熊氏" },
+           marriages: [{
+           spouse: {
+           name: "女登",
+           class: "woman",
+           extra: { "nickname": "有蟜氏" },
+           },
+           children: [{
+              name: "姜神农",
+              class: "man",
+              extra: { "nickname": "炎帝" },
+              marriages: [{
+                  spouse:{ "name":"听訞", "class":"woman"},
+                  children: [
+                     { name: "炎居", "class": "man"},
+                     { name: "瑶姬", "class": "woman", extra: { "nickname": "巫山神女" }},
+                     { name: "女娃", "class": "woman", extra: { "nickname": "精卫" }},
+                  ]
+              }]
+           }]
+
+           },
+           {
+           "spouse": {
+               name: "附宝",
+               class: "woman",
+               extra: { "nickname": "有蟜氏" },
+           },
+           children: [{
+             name: "姬轩辕",
+             class: "man",
+             extra: { "nickname": "黄帝" },
+             marriages: [{
+               spouse: { name: "嫘祖", class: "woman", extra: { "nickname": "蚕神" }},
+               children: [
+                    { name: "姬玄嚣", "class": "man", extra: { "nickname": "少昊" },
+                      marriages: [{
+                      spouse: { name: "凤鸿氏", class: "woman"},
+                      children: [
+                                 { name: "姬蟜极", "class": "man"},
+                                 ]
+                      }]
+                    },
+                    { name: "姬昌意", "class": "man",
+                      marriages: [{
+                        spouse: { name: "昌仆", class: "woman", extra: { "nickname": "蜀山氏" }},
+                        children: [
+                          { name: "姬高阳", "class": "man", extra: { "nickname": "帝颛顼" },
+                            marriages: [{
+                              spouse: { name: "女禄", class: "woman", extra: { "nickname": "沉香" }},
+                              children: [
+                                         { name: "穷蝉", "class": "man"}
+                              ]
+                            }]
+                          },
+                        ]
+                      }]
+                    }
+               ]
+             },{
+               spouse: { name: "女节", class: "woman", extra: { "nickname": "方雷氏" }},
+             },{
+             spouse: { name: "彤鱼氏", class: "woman"},
+             children: [
+                        { name: "夷鼓", "class": "man"},
+                        { name: "苍林", "class": "man"},
+                        ]
+             },{
+             spouse: { name: "嫫母", class: "woman"},
+             }]
+            }]
           }]
-        }, {
-          "name": "Jane",
-          "class": "woman"
-        }, {
-          "name": "Jasper",
-          "class": "man"
-        }, {
-          "name": "Emma",
-          "class": "woman"
-        }, {
-          "name": "Julia",
-          "class": "woman"
-        }, {
-          "name": "Jessica",
-          "class": "woman"
-        }]
-      }]
-    }]
+        },
+       { name: "宓妃", class: "woman", extra: { "nickname": "洛神" }}
+    ]
   }]
 }];
-
-
 dTree.init(treeData, {
   target: "#graph",
   debug: true,
